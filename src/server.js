@@ -9,13 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 1. Primeiro as rotas da API
-app.use('/', routes);
-
-// 2. Depois a rota raiz (Home)
 app.get('/', (req, res) => {
   res.json({ message: "API Currículo Express Online!" });
 });
+
+app.use('/', routes);
 
 const PORT = process.env.PORT || 3000;
 
